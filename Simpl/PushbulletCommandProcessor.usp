@@ -1,0 +1,51 @@
+#USER_SIMPLSHARP_LIBRARY "Pushbullet" 
+DIGITAL_INPUT Trigger_[10];
+DIGITAL_INPUT Device_[10];
+
+
+STRING_INPUT Access_Code[128];
+STRING_INPUT Title_[10][32];
+STRING_INPUT Message_[10][128];
+
+STRING_INPUT Email_Address_[10][128];
+
+Pushbullet myPushbullet;
+
+/*******************************************************************************************
+  Main()
+  Uncomment and place one-time startup code here
+  (This code will get called when the system starts up)
+*******************************************************************************************/
+PUSH Trigger_
+{
+	integer i;
+	Switch(GetLastModifiedArrayIndex())
+	{
+		Case(0):
+		{
+        	//
+		}
+    	Default:
+		{
+        	For(i=1 to 10)
+			{
+            	if(Device_[i] = 1 && Access_Code != "" && Email_Address_[i] != "")
+				{
+                	myPushbullet.sendMessage(Access_Code,Email_Address_[i],Message_[GetLastModifiedArrayIndex()],Title_[GetLastModifiedArrayIndex()]);
+				}
+			}
+		}
+	}
+}
+
+
+Function Main()
+{
+    // TODO:  Add code here
+    // Initialize declared global and local variables/arrays as needed.
+
+    WaitForInitializationComplete();
+	myPushbullet.sendMessage("1","1","msg","title");
+}
+
+
