@@ -1,6 +1,5 @@
 # Crestron-Pushbullet
 Crestron Simpl# Module to Send a Pushbullet Notification.
-
 -This is an inital commit for proof of concept. Sending a Message does work.  
 -Would like to add sending a file and other push types.
 -You will need your access code which can be retrieved from the Pushbullet Website.
