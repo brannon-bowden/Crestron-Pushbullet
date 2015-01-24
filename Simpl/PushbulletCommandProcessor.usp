@@ -1,42 +1,40 @@
 #USER_SIMPLSHARP_LIBRARY "Pushbullet" 
-DIGITAL_INPUT Trigger_[10];
-DIGITAL_INPUT Device_[10];
 
+DIGITAL_INPUT Send;
 
 STRING_INPUT Access_Code[128];
-STRING_INPUT Title_[10][32];
-STRING_INPUT Message_[10][128];
+STRING_INPUT Title[64];
+STRING_INPUT Message[128];
 
 STRING_INPUT Email_Address_[10][128];
+STRING_OUTPUT Message_Received;
 
-Pushbullet myPushbullet;
+
+Pushbullet MyPushBullet;
 
 /*******************************************************************************************
   Main()
   Uncomment and place one-time startup code here
   (This code will get called when the system starts up)
 *******************************************************************************************/
-PUSH Trigger_
+PUSH Send
 {
 	integer i;
-	Switch(GetLastModifiedArrayIndex())
+   	For(i=1 to 10)
 	{
-		Case(0):
+    	if(Access_Code != "" && Email_Address_[i] != "")
 		{
-        	//
-		}
-    	Default:
-		{
-        	For(i=1 to 10)
-			{
-            	if(Device_[i] = 1 && Access_Code != "" && Email_Address_[i] != "")
-				{
-                	myPushbullet.sendMessage(Access_Code,Email_Address_[i],Message_[GetLastModifiedArrayIndex()],Title_[GetLastModifiedArrayIndex()]);
-				}
-			}
+        	MyPushbullet.sendNote(Email_Address_[i],Title,Message);
 		}
 	}
 }
+
+
+EVENTHANDLER _onPushReceived(PushbulletEventArgs e)
+{
+	Message_Received = e.message;
+}
+
 
 
 Function Main()
@@ -45,7 +43,15 @@ Function Main()
     // Initialize declared global and local variables/arrays as needed.
 
     WaitForInitializationComplete();
-	myPushbullet.sendMessage("1","1","msg","title");
+	MyPushbullet.setAccessCode(access_code);
+
+	RegisterEvent(PushEvents, onPushReceived, _onPushReceived);	
+	Wait(1500)
+	{
+		CEvent pause;
+		MyPushbullet.connect();
+		MyPushbullet.AsyncSendAndReceive(); 
+	}
 }
 
 
