@@ -10,3 +10,9 @@ C:\Users\brannon\Documents\Visual Studio 2008\Projects\Pushbullet\Crestron-Pushb
 C:\Users\brannon\Documents\Visual Studio 2008\Projects\Pushbullet\Crestron-Pushbullet\CS\Pushbullet\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\brannon\Documents\Visual Studio 2008\Projects\Pushbullet\Crestron-Pushbullet\CS\Pushbullet\obj\Debug\Pushbullet.dll
 C:\Users\brannon\Documents\Visual Studio 2008\Projects\Pushbullet\Crestron-Pushbullet\CS\Pushbullet\obj\Debug\Pushbullet.pdb
+C:\Users\brannon\Documents\Visual Studio 2008\Projects\Pushbullet\Crestron-Pushbullet\Crestron-Pushbullet\CS\Pushbullet\bin\Pushbullet.dll
+C:\Users\brannon\Documents\Visual Studio 2008\Projects\Pushbullet\Crestron-Pushbullet\Crestron-Pushbullet\CS\Pushbullet\bin\Pushbullet.pdb
+C:\Users\brannon\Documents\Visual Studio 2008\Projects\Pushbullet\Crestron-Pushbullet\Crestron-Pushbullet\CS\Pushbullet\bin\Newtonsoft.Json.Compact.dll
+C:\Users\brannon\Documents\Visual Studio 2008\Projects\Pushbullet\Crestron-Pushbullet\Crestron-Pushbullet\CS\Pushbullet\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\brannon\Documents\Visual Studio 2008\Projects\Pushbullet\Crestron-Pushbullet\Crestron-Pushbullet\CS\Pushbullet\obj\Debug\Pushbullet.dll
+C:\Users\brannon\Documents\Visual Studio 2008\Projects\Pushbullet\Crestron-Pushbullet\Crestron-Pushbullet\CS\Pushbullet\obj\Debug\Pushbullet.pdb

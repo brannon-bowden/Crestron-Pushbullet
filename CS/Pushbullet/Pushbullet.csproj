@@ -45,6 +45,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json.Compact, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\ProgramData\Crestron\SDK\Newtonsoft.Json.Compact.dll</HintPath>
+    </Reference>
     <Reference Include="SimplSharpCustomAttributesInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1099c178b3b54c3b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\ProgramData\Crestron\SDK\SimplSharpCustomAttributesInterface.dll</HintPath>
@@ -58,8 +62,10 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pushbullet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pushbullet.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <None Include="Properties\ControlSystem.cfg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
@@ -69,9 +75,9 @@
         <ProgramIdTag>Pushbullet</ProgramIdTag>
         <SystemName>Pushbullet</SystemName>
         <Programmer />
-        <ArchiveFilename>C:\Users\brannon\Documents\Visual Studio 2008\Projects\Pushbullet\Crestron-Pushbullet\CS\Pushbullet\bin\Pushbullet.clz</ArchiveFilename>
+        <ArchiveFilename>C:\Users\brannon\Documents\Visual Studio 2008\Projects\Pushbullet\Crestron-Pushbullet\Crestron-Pushbullet\CS\Pushbullet\bin\Pushbullet.clz</ArchiveFilename>
         <MinFirmwareVersion>1.007.0017</MinFirmwareVersion>
-        <CompiledOn>1/11/2015 8:07:23 AM</CompiledOn>
+        <CompiledOn>1/22/2015 8:46:38 AM</CompiledOn>
         <AdditionalInfo />
         <EmbedSourceArchive>False</EmbedSourceArchive>
         <CopyTo />
