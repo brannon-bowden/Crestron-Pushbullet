@@ -116,6 +116,7 @@ namespace PushbulletProcessor
         {
             wsc.URL = "wss://stream.pushbullet.com/websocket/" + Access_Code;
             wrc = wsc.Connect();
+            
             if (wrc == (int)WebSocketClient.WEBSOCKET_RESULT_CODES.WEBSOCKET_CLIENT_SUCCESS)
             {
                 CrestronConsole.PrintLine("Websocket connected \r\n");
@@ -272,7 +273,7 @@ namespace PushbulletProcessor
                 string s = response.ContentString.ToString();
                 if (response.Code >= 200 && response.Code < 300)
                 {
-                    ErrorLog.Notice("Deleted\n");
+                    //ErrorLog.Notice("Deleted\n");
                     return 1;
                 }
                 else
@@ -450,7 +451,7 @@ namespace PushbulletProcessor
                     if (response.Code >= 200 && response.Code < 300)
                     {
                         string s = response.ContentString.ToString();
-                        ErrorLog.Notice(s + "\n");
+                        //ErrorLog.Notice(s + "\n");
                         string[] words = s.Split(',');
                         string senderEmail;
                         foreach (string word in words)
@@ -520,6 +521,7 @@ namespace PushbulletProcessor
                     getPush();
 
                 }
+                //ErrorLog.Notice(s);
 
             }
             catch (Exception e)
